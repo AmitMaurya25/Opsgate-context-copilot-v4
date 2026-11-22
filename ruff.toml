@@ -1,0 +1,5 @@
+# CI gate: real errors only (syntax errors, undefined names, unused imports/variables). The codebase deliberately uses a dense one-line style, so style rules are off.
+line-length = 200
+[lint]
+select = ["E9", "F"]
+ignore = ["F401", "F841", "F811"]

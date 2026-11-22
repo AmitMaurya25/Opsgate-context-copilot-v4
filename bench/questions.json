@@ -1,0 +1,191 @@
+[
+ {
+  "id": "chat1",
+  "category": "chat",
+  "q": "Hi, who are you?",
+  "expect": ""
+ },
+ {
+  "id": "chat2",
+  "category": "chat",
+  "q": "Thanks, that helps!",
+  "expect": ""
+ },
+ {
+  "id": "chat3",
+  "category": "chat",
+  "q": "Good morning, how are you?",
+  "expect": ""
+ },
+ {
+  "id": "chat4",
+  "category": "chat",
+  "q": "What can you help me with?",
+  "expect": ""
+ },
+ {
+  "id": "rb1",
+  "category": "runbook",
+  "q": "How do I fix Error 5042 in the payment worker? Show the Python retry script.",
+  "expect": "retry_payment"
+ },
+ {
+  "id": "rb2",
+  "category": "runbook",
+  "q": "What does error 5017 mean and what should I do first?",
+  "expect": "idempotency"
+ },
+ {
+  "id": "rb3",
+  "category": "runbook",
+  "q": "How do I fix error 6012 in inventory sync?",
+  "expect": "resync"
+ },
+ {
+  "id": "rb4",
+  "category": "runbook",
+  "q": "When should I escalate error 5042?",
+  "expect": "15 minutes"
+ },
+ {
+  "id": "oos1",
+  "category": "out_of_scope",
+  "q": "What is our policy on Lunar New Year holidays?",
+  "expect": "cannot verify"
+ },
+ {
+  "id": "oos2",
+  "category": "out_of_scope",
+  "q": "What is the company's remote work stipend?",
+  "expect": "cannot verify"
+ },
+ {
+  "id": "oos3",
+  "category": "out_of_scope",
+  "q": "Who won the football world cup policy for staff tickets?",
+  "expect": "cannot verify"
+ },
+ {
+  "id": "oos4",
+  "category": "out_of_scope",
+  "q": "What is the cafeteria menu policy?",
+  "expect": "cannot verify"
+ },
+ {
+  "id": "ops1",
+  "category": "ops",
+  "q": "Check the last 200 failed orders and tell me which service threw the most errors.",
+  "expect": "payment-worker"
+ },
+ {
+  "id": "ops2",
+  "category": "ops",
+  "q": "Who is on call for payment-worker?",
+  "expect": "asha"
+ },
+ {
+  "id": "ops3",
+  "category": "ops",
+  "q": "Show the latest commits of the order-api service.",
+  "expect": "commit"
+ },
+ {
+  "id": "ops4",
+  "category": "ops",
+  "q": "List the active alerts.",
+  "expect": "5042"
+ },
+ {
+  "id": "long1",
+  "category": "long",
+  "setup": [
+   "For this session my incident ticket is INC-4821 and the affected service is payment-worker.",
+   "Check the last 200 failed orders and tell me which service threw the most errors.",
+   "How do I fix Error 5042 in the payment worker? Show the Python retry script.",
+   "Show the latest commits of the order-api service.",
+   "List the active alerts."
+  ],
+  "q": "Which incident ticket number did I give you earlier?",
+  "expect": "INC-4821"
+ },
+ {
+  "id": "long2",
+  "category": "long",
+  "setup": [
+   "Please remember: the customer-facing status page owner is Dana, and I want answers as compact tables.",
+   "Check the last 200 failed orders and tell me which service threw the most errors.",
+   "How do I fix Error 5042 in the payment worker? Show the Python retry script.",
+   "Show the latest commits of the order-api service.",
+   "List the active alerts."
+  ],
+  "q": "Who did I say owns the status page?",
+  "expect": "Dana"
+ },
+ {
+  "id": "long3",
+  "category": "long",
+  "setup": [
+   "Our change freeze ends on Friday and the rollback target version is v2.3.1.",
+   "Check the last 200 failed orders and tell me which service threw the most errors.",
+   "How do I fix Error 5042 in the payment worker? Show the Python retry script.",
+   "Show the latest commits of the order-api service.",
+   "List the active alerts."
+  ],
+  "q": "What rollback target version did I mention?",
+  "expect": "v2.3.1"
+ },
+ {
+  "id": "long4",
+  "category": "long",
+  "setup": [
+   "The war room channel for this incident is #inc-war-room-7.",
+   "Check the last 200 failed orders and tell me which service threw the most errors.",
+   "How do I fix Error 5042 in the payment worker? Show the Python retry script.",
+   "Show the latest commits of the order-api service.",
+   "List the active alerts."
+  ],
+  "q": "Which channel is the war room?",
+  "expect": "inc-war-room-7"
+ },
+ {
+  "id": "mem1",
+  "category": "memory",
+  "session1": [
+   "I prefer Python for all scripts."
+  ],
+  "q": "Suggest a quick fix script for a failing retry.",
+  "expect": "python"
+ },
+ {
+  "id": "mem2",
+  "category": "memory",
+  "session1": [
+   "I am vegetarian."
+  ],
+  "q": "Suggest a quick snack for the night shift.",
+  "expect": "vegetarian"
+ },
+ {
+  "id": "mem3",
+  "category": "memory",
+  "session1": [
+   "I am vegetarian."
+  ],
+  "update": {
+   "old": "vegetarian",
+   "new": "The user is vegan."
+  },
+  "q": "Suggest a quick snack for the night shift.",
+  "expect": "vegan",
+  "forbid": "vegetarian"
+ },
+ {
+  "id": "mem4",
+  "category": "memory",
+  "session1": [
+   "Please always answer step by step."
+  ],
+  "q": "How do I check payment-worker latency?",
+  "expect": "step by step"
+ }
+]

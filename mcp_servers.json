@@ -1,0 +1,50 @@
+{
+  "git_ops": {
+    "transport": "stdio",
+    "command": "python",
+    "args": ["mcp_servers/git_ops_server.py"],
+    "default_risk": "READ_ONLY",
+    "enabled": true
+  },
+  "db_logs": {
+    "transport": "stdio",
+    "command": "python",
+    "args": ["mcp_servers/db_logs_server.py"],
+    "default_risk": "READ_ONLY",
+    "enabled": true
+  },
+  "incident_ops": {
+    "transport": "stdio",
+    "command": "python",
+    "args": ["mcp_servers/incident_server.py"],
+    "default_risk": "PRIVILEGED_WRITE",
+    "risk_overrides": {
+      "list_active_alerts": "READ_ONLY",
+      "get_oncall": "READ_ONLY",
+      "draft_incident_email": "READ_ONLY",
+      "get_sla_status": "READ_ONLY"
+    },
+    "enabled": true
+  },
+  "runbook_rag": {
+    "transport": "stdio",
+    "command": "python",
+    "args": ["mcp_servers/runbook_rag_server.py"],
+    "default_risk": "READ_ONLY",
+    "enabled": true
+  },
+  "utility_tools": {
+    "transport": "stdio",
+    "command": "python",
+    "args": ["mcp_servers/utility_server.py"],
+    "default_risk": "READ_ONLY",
+    "enabled": true
+  },
+  "web_search": {
+    "transport": "stdio",
+    "command": "uvx",
+    "args": ["duckduckgo-mcp-server"],
+    "default_risk": "READ_ONLY",
+    "enabled": true
+  }
+}

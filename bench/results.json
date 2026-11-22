@@ -1,0 +1,665 @@
+{
+ "scorer": "heuristic (local fallback, NOT RAGAS)",
+ "summary": {
+  "naive": {
+   "faithfulness": 0.7419384435009435,
+   "answer_relevancy": 0.09678650695510671,
+   "context_precision": 0.08556547619047619,
+   "avg_input_tokens": 1932.85,
+   "avg_output_tokens": 105.55,
+   "avg_latency_ms": 2186.4,
+   "avg_tools": 21.0
+  },
+  "engineered": {
+   "faithfulness": 0.7535513965201466,
+   "answer_relevancy": 0.3186211218346563,
+   "context_precision": 0.4083333333333333,
+   "avg_input_tokens": 412.25,
+   "avg_output_tokens": 57.9,
+   "avg_latency_ms": 957.9,
+   "avg_tools": 2.15
+  }
+ },
+ "rows": [
+  {
+   "id": "chat1",
+   "category": "chat",
+   "mode": "naive",
+   "q": "Hi, who are you?",
+   "answer": "Result: main\nrelease/2.4\nhotfix/retry\nfeature/queue-v2",
+   "input_tokens": 791,
+   "output_tokens": 40,
+   "latency_ms": 9455,
+   "tools": 21,
+   "scores": {
+    "faithfulness": NaN,
+    "answer_relevancy": 0.0,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "chat2",
+   "category": "chat",
+   "mode": "naive",
+   "q": "Thanks, that helps!",
+   "answer": "Result: main\nrelease/2.4\nhotfix/retry\nfeature/queue-v2",
+   "input_tokens": 877,
+   "output_tokens": 40,
+   "latency_ms": 1436,
+   "tools": 21,
+   "scores": {
+    "faithfulness": NaN,
+    "answer_relevancy": 0.0,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "chat3",
+   "category": "chat",
+   "mode": "naive",
+   "q": "Good morning, how are you?",
+   "answer": "Result: main\nrelease/2.4\nhotfix/retry\nfeature/queue-v2",
+   "input_tokens": 855,
+   "output_tokens": 40,
+   "latency_ms": 1984,
+   "tools": 21,
+   "scores": {
+    "faithfulness": NaN,
+    "answer_relevancy": 0.0,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "chat4",
+   "category": "chat",
+   "mode": "naive",
+   "q": "What can you help me with?",
+   "answer": "Result: main\nrelease/2.4\nhotfix/retry\nfeature/queue-v2",
+   "input_tokens": 841,
+   "output_tokens": 40,
+   "latency_ms": 1427,
+   "tools": 21,
+   "scores": {
+    "faithfulness": NaN,
+    "answer_relevancy": 0.0,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "rb1",
+   "category": "runbook",
+   "mode": "naive",
+   "q": "How do I fix Error 5042 in the payment worker? Show the Python retry script.",
+   "answer": "Result: [\n  {\n    \"text\": \"Error 5042 means the payment gateway did not respond in time. First confirm the gateway status page, then check queue depth. If the gateway is healthy, replay the job with the retry script below. Never | {\n  \"rows\": [\n    {\n      \"txn_id\": 1,\n      \"order_id\": 274,\n      \"service\": \"order-api\",\n      \"error_code\": \"5003\",\n      \"message\": \"order-api failed with error 5003\",\n      \"ts\": \"2026-11-19T09:55:00\",\n      \"trace | [\n  {\n    \"service\": \"payment-worker\",\n    \"error_code\": \"5017\",\n    \"n\": 42\n  },\n  {\n    \"service\": \"payment-worker\",\n    \"error_code\": \"5001\",\n    \"n\": 37\n  },\n  {\n    \"service\": \"payment-worker\",\n    \"error_code\": \"50",
+   "input_tokens": 4333,
+   "output_tokens": 256,
+   "latency_ms": 3252,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.9807692307692307,
+    "answer_relevancy": 0.38621608134777174,
+    "context_precision": 0.0
+   }
+  },
+  {
+   "id": "rb2",
+   "category": "runbook",
+   "mode": "naive",
+   "q": "What does error 5017 mean and what should I do first?",
+   "answer": "Result: {\n  \"rows\": [\n    {\n      \"txn_id\": 1,\n      \"order_id\": 274,\n      \"service\": \"order-api\",\n      \"error_code\": \"5003\",\n      \"message\": \"order-api failed with error 5003\",\n      \"ts\": \"2026-11-19T09:55:00\",\n      \"trace | [\n  {\n    \"service\": \"payment-worker\",\n    \"error_code\": \"5017\",\n    \"n\": 42\n  },\n  {\n    \"service\": \"payment-worker\",\n    \"error_code\": \"5001\",\n    \"n\": 37\n  },\n  {\n    \"service\": \"payment-worker\",\n    \"error_code\": \"50 | {\n  \"service\": \"payment-worker\",\n  \"p50\": 82,\n  \"p95\": 235,\n  \"p99\": 689,\n  \"error_rate\": 3.34,\n  \"window\": \"24h\"\n}",
+   "input_tokens": 3992,
+   "output_tokens": 214,
+   "latency_ms": 2010,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.975,
+    "answer_relevancy": 0.17213259316477408,
+    "context_precision": 0.125
+   }
+  },
+  {
+   "id": "rb3",
+   "category": "runbook",
+   "mode": "naive",
+   "q": "How do I fix error 6012 in inventory sync?",
+   "answer": "Result: {\n  \"rows\": [\n    {\n      \"txn_id\": 1,\n      \"order_id\": 274,\n      \"service\": \"order-api\",\n      \"error_code\": \"5003\",\n      \"message\": \"order-api failed with error 5003\",\n      \"ts\": \"2026-11-19T09:55:00\",\n      \"trace | [\n  {\n    \"service\": \"payment-worker\",\n    \"error_code\": \"5017\",\n    \"n\": 42\n  },\n  {\n    \"service\": \"payment-worker\",\n    \"error_code\": \"5001\",\n    \"n\": 37\n  },\n  {\n    \"service\": \"payment-worker\",\n    \"error_code\": \"50 | {\n  \"service\": \"payment-worker\",\n  \"p50\": 82,\n  \"p95\": 235,\n  \"p99\": 689,\n  \"error_rate\": 3.34,\n  \"window\": \"24h\"\n}",
+   "input_tokens": 3948,
+   "output_tokens": 214,
+   "latency_ms": 1719,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.975,
+    "answer_relevancy": 0.11547005383792515,
+    "context_precision": 0.125
+   }
+  },
+  {
+   "id": "rb4",
+   "category": "runbook",
+   "mode": "naive",
+   "q": "When should I escalate error 5042?",
+   "answer": "Result: {\n  \"rows\": [\n    {\n      \"txn_id\": 1,\n      \"order_id\": 274,\n      \"service\": \"order-api\",\n      \"error_code\": \"5003\",\n      \"message\": \"order-api failed with error 5003\",\n      \"ts\": \"2026-11-19T09:55:00\",\n      \"trace | [\n  {\n    \"service\": \"payment-worker\",\n    \"error_code\": \"5017\",\n    \"n\": 42\n  },\n  {\n    \"service\": \"payment-worker\",\n    \"error_code\": \"5001\",\n    \"n\": 37\n  },\n  {\n    \"service\": \"payment-worker\",\n    \"error_code\": \"50 | {\n  \"service\": \"payment-worker\",\n  \"p50\": 82,\n  \"p95\": 235,\n  \"p99\": 689,\n  \"error_rate\": 3.34,\n  \"window\": \"24h\"\n}",
+   "input_tokens": 4022,
+   "output_tokens": 214,
+   "latency_ms": 1158,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.975,
+    "answer_relevancy": 0.09938079899999067,
+    "context_precision": 0.125
+   }
+  },
+  {
+   "id": "oos1",
+   "category": "out_of_scope",
+   "mode": "naive",
+   "q": "What is our policy on Lunar New Year holidays?",
+   "answer": "Result: []",
+   "input_tokens": 822,
+   "output_tokens": 38,
+   "latency_ms": 1999,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.0,
+    "answer_relevancy": 0.0,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "oos2",
+   "category": "out_of_scope",
+   "mode": "naive",
+   "q": "What is the company's remote work stipend?",
+   "answer": "Result: main\nrelease/2.4\nhotfix/retry\nfeature/queue-v2",
+   "input_tokens": 831,
+   "output_tokens": 40,
+   "latency_ms": 1160,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.9,
+    "answer_relevancy": 0.0,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "oos3",
+   "category": "out_of_scope",
+   "mode": "naive",
+   "q": "Who won the football world cup policy for staff tickets?",
+   "answer": "Result: [] | {\n  \"timezone\": \"UTC\",\n  \"iso_timestamp\": \"2026-11-21T12:21:50+00:00\",\n  \"utc_offset\": \"+00:00\"\n}",
+   "input_tokens": 809,
+   "output_tokens": 92,
+   "latency_ms": 2002,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.9166666666666666,
+    "answer_relevancy": 0.07412493166611013,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "oos4",
+   "category": "out_of_scope",
+   "mode": "naive",
+   "q": "What is the cafeteria menu policy?",
+   "answer": "Result: []",
+   "input_tokens": 827,
+   "output_tokens": 35,
+   "latency_ms": 1214,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.0,
+    "answer_relevancy": 0.0,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "ops1",
+   "category": "ops",
+   "mode": "naive",
+   "q": "Check the last 200 failed orders and tell me which service threw the most errors.",
+   "answer": "Result: {\n  \"rows\": [\n    {\n      \"txn_id\": 1,\n      \"order_id\": 274,\n      \"service\": \"order-api\",\n      \"error_code\": \"5003\",\n      \"message\": \"order-api failed with error 5003\",\n      \"ts\": \"2026-11-19T09:55:00\",\n      \"trace",
+   "input_tokens": 3923,
+   "output_tokens": 79,
+   "latency_ms": 1753,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.9523809523809523,
+    "answer_relevancy": 0.19245008972987526,
+    "context_precision": 0.0
+   }
+  },
+  {
+   "id": "ops2",
+   "category": "ops",
+   "mode": "naive",
+   "q": "Who is on call for payment-worker?",
+   "answer": "Result: {\n  \"service\": \"payment-worker\",\n  \"oncall\": \"asha\"\n} | Skipped: privileged write actions are only executed by the governed OpsGate pipeline. | [\n  {\n    \"text\": \"The payment worker processes card payments from the order queue. It retries transient failures and parks jobs that keep failing. On-call engineers use this runbook when alerts fire for the payment-work",
+   "input_tokens": 1090,
+   "output_tokens": 182,
+   "latency_ms": 2893,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.7428571428571429,
+    "answer_relevancy": 0.5306686305052325,
+    "context_precision": 0.14285714285714285
+   }
+  },
+  {
+   "id": "ops3",
+   "category": "ops",
+   "mode": "naive",
+   "q": "Show the latest commits of the order-api service.",
+   "answer": "Result: [\n  {\n    \"sha\": \"c7a2b17\",\n    \"author\": \"ravi\",\n    \"message\": \"bump timeout\",\n    \"ts\": \"2026-11-19T10:00:00\",\n    \"files\": 8\n  },\n  {\n    \"sha\": \"b646e2b\",\n    \"author\": \"meera\",\n    \"message\": \"add idempotency key\", | {\n  \"rows\": [\n    {\n      \"txn_id\": 1,\n      \"order_id\": 274,\n      \"service\": \"order-api\",\n      \"error_code\": \"5003\",\n      \"message\": \"order-api failed with error 5003\",\n      \"ts\": \"2026-11-19T09:55:00\",\n      \"trace | main\nrelease/2.4\nhotfix/retry\nfeature/queue-v2",
+   "input_tokens": 4181,
+   "output_tokens": 199,
+   "latency_ms": 2332,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.9772727272727273,
+    "answer_relevancy": 0.24743582965269675,
+    "context_precision": 0.0
+   }
+  },
+  {
+   "id": "ops4",
+   "category": "ops",
+   "mode": "naive",
+   "q": "List the active alerts.",
+   "answer": "Result: [\n  {\n    \"service\": \"payment-worker\",\n    \"alert\": \"error 5042 spike\",\n    \"severity\": \"Sev1\"\n  },\n  {\n    \"service\": \"inventory-sync\",\n    \"alert\": \"queue lag\",\n    \"severity\": \"Sev2\"\n  }\n]",
+   "input_tokens": 779,
+   "output_tokens": 72,
+   "latency_ms": 2124,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.9333333333333333,
+    "answer_relevancy": 0.11785113019775795,
+    "context_precision": 0.16666666666666666
+   }
+  },
+  {
+   "id": "long1",
+   "category": "long",
+   "mode": "naive",
+   "q": "Which incident ticket number did I give you earlier?",
+   "answer": "Result: [\n  {\n    \"service\": \"payment-worker\",\n    \"alert\": \"error 5042 spike\",\n    \"severity\": \"Sev1\"\n  },\n  {\n    \"service\": \"inventory-sync\",\n    \"alert\": \"queue lag\",\n    \"severity\": \"Sev2\"\n  }\n] | {\n  \"service\": \"payment-worker\",\n  \"oncall\": \"asha\"\n} | Skipped: privileged write actions are only executed by the governed OpsGate pipeline.",
+   "input_tokens": 1535,
+   "output_tokens": 169,
+   "latency_ms": 1783,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.6538461538461539,
+    "answer_relevancy": 0.0,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "long2",
+   "category": "long",
+   "mode": "naive",
+   "q": "Who did I say owns the status page?",
+   "answer": "Result: {\n  \"service\": \"payment-worker\",\n  \"sla_met\": false,\n  \"window\": \"24h\"\n}",
+   "input_tokens": 1373,
+   "output_tokens": 49,
+   "latency_ms": 1726,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.8888888888888888,
+    "answer_relevancy": 0.0,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "long3",
+   "category": "long",
+   "mode": "naive",
+   "q": "What rollback target version did I mention?",
+   "answer": "Result: Skipped: privileged write actions are only executed by the governed OpsGate pipeline.",
+   "input_tokens": 1449,
+   "output_tokens": 58,
+   "latency_ms": 1140,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.1,
+    "answer_relevancy": 0.0,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "long4",
+   "category": "long",
+   "mode": "naive",
+   "q": "Which channel is the war room?",
+   "answer": "Result: main\nrelease/2.4\nhotfix/retry\nfeature/queue-v2",
+   "input_tokens": 1379,
+   "output_tokens": 40,
+   "latency_ms": 1161,
+   "tools": 21,
+   "scores": {
+    "faithfulness": 0.9,
+    "answer_relevancy": 0.0,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "chat1",
+   "category": "chat",
+   "mode": "engineered",
+   "q": "Hi, who are you?",
+   "answer": "(offline) Hi, who are you?",
+   "input_tokens": 186,
+   "output_tokens": 6,
+   "latency_ms": 1133,
+   "tools": 0,
+   "scores": {
+    "faithfulness": NaN,
+    "answer_relevancy": 0.7071067811865476,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "chat2",
+   "category": "chat",
+   "mode": "engineered",
+   "q": "Thanks, that helps!",
+   "answer": "(offline) Thanks, that helps!",
+   "input_tokens": 185,
+   "output_tokens": 7,
+   "latency_ms": 569,
+   "tools": 0,
+   "scores": {
+    "faithfulness": NaN,
+    "answer_relevancy": 0.8164965809277261,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "chat3",
+   "category": "chat",
+   "mode": "engineered",
+   "q": "Good morning, how are you?",
+   "answer": "(offline) Good morning, how are you?",
+   "input_tokens": 187,
+   "output_tokens": 9,
+   "latency_ms": 567,
+   "tools": 0,
+   "scores": {
+    "faithfulness": NaN,
+    "answer_relevancy": 0.8164965809277261,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "chat4",
+   "category": "chat",
+   "mode": "engineered",
+   "q": "What can you help me with?",
+   "answer": "(offline) What can you help me with?",
+   "input_tokens": 188,
+   "output_tokens": 9,
+   "latency_ms": 570,
+   "tools": 0,
+   "scores": {
+    "faithfulness": NaN,
+    "answer_relevancy": 0.7071067811865476,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "rb1",
+   "category": "runbook",
+   "mode": "engineered",
+   "q": "How do I fix Error 5042 in the payment worker? Show the Python retry script.",
+   "answer": "[INTERNAL RUNBOOK] (offline) Error 5042 means the payment gateway did not respond in time. First confirm the gateway status page, then check queue depth. If the gateway is healthy, replay the job with the retry script below. Never replay more than 3 times, because duplicate charges are po",
+   "input_tokens": 371,
+   "output_tokens": 67,
+   "latency_ms": 1147,
+   "tools": 0,
+   "scores": {
+    "faithfulness": 0.9393939393939394,
+    "answer_relevancy": 0.30151134457776363,
+    "context_precision": 0.0
+   }
+  },
+  {
+   "id": "rb2",
+   "category": "runbook",
+   "mode": "engineered",
+   "q": "What does error 5017 mean and what should I do first?",
+   "answer": "[INTERNAL RUNBOOK] (offline) |Code|Meaning|First action| |---|---|---| |5042|Gateway timeout|Retry with backoff| |5001|Invalid card token|Ask customer to re-enter card| |5017|Duplicate charge guard|Check idempotency key, do not retry|",
+   "input_tokens": 329,
+   "output_tokens": 53,
+   "latency_ms": 1138,
+   "tools": 0,
+   "scores": {
+    "faithfulness": 0.9615384615384616,
+    "answer_relevancy": 0.31622776601683794,
+    "context_precision": 0.4
+   }
+  },
+  {
+   "id": "rb3",
+   "category": "runbook",
+   "mode": "engineered",
+   "q": "How do I fix error 6012 in inventory sync?",
+   "answer": "[INTERNAL RUNBOOK] (offline) Inventory sync error codes.",
+   "input_tokens": 286,
+   "output_tokens": 9,
+   "latency_ms": 1140,
+   "tools": 0,
+   "scores": {
+    "faithfulness": 0.8,
+    "answer_relevancy": 0.6000000000000001,
+    "context_precision": 0.2
+   }
+  },
+  {
+   "id": "rb4",
+   "category": "runbook",
+   "mode": "engineered",
+   "q": "When should I escalate error 5042?",
+   "answer": "[INTERNAL RUNBOOK] (offline) If error 5042 persists for more than 15 minutes, page the payments on-call and open an incident. Roll back the latest worker release only after confirming the commit is the cause.",
+   "input_tokens": 309,
+   "output_tokens": 47,
+   "latency_ms": 1142,
+   "tools": 0,
+   "scores": {
+    "faithfulness": 0.9583333333333334,
+    "answer_relevancy": 0.22645540682891918,
+    "context_precision": 0.3333333333333333
+   }
+  },
+  {
+   "id": "oos1",
+   "category": "out_of_scope",
+   "mode": "engineered",
+   "q": "What is our policy on Lunar New Year holidays?",
+   "answer": "[LIVE MCP / WEB SEARCH] Result: id,title,state\n100,PR 100: cleanup,open\n101,PR 101: retry policy,open\n102,PR 102: retry policy,open\n103,PR 103: cleanup,open\n104,PR 104: retry policy,open\n105,PR 105: metrics,open\n106,PR 106: retry policy,open\n107,PR 107",
+   "input_tokens": 544,
+   "output_tokens": 84,
+   "latency_ms": 1720,
+   "tools": 4,
+   "scores": {
+    "faithfulness": 0.9444444444444444,
+    "answer_relevancy": 0.3394112549695429,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "oos2",
+   "category": "out_of_scope",
+   "mode": "engineered",
+   "q": "What is the company's remote work stipend?",
+   "answer": "[INTERNAL RUNBOOK] (offline) The payment worker processes card payments from the order queue. It retries transient failures and parks jobs that keep failing. On-call engineers use this runbook when alerts fire for the payment-worker service.",
+   "input_tokens": 287,
+   "output_tokens": 55,
+   "latency_ms": 1137,
+   "tools": 0,
+   "scores": {
+    "faithfulness": 0.9545454545454546,
+    "answer_relevancy": 0.23008949665421113,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "oos3",
+   "category": "out_of_scope",
+   "mode": "engineered",
+   "q": "Who won the football world cup policy for staff tickets?",
+   "answer": "[LIVE MCP / WEB SEARCH] Result: {\"timezone\":\"UTC\",\"iso_timestamp\":\"\",\"utc_offset\":\"+00:00\"}",
+   "input_tokens": 542,
+   "output_tokens": 43,
+   "latency_ms": 1998,
+   "tools": 4,
+   "scores": {
+    "faithfulness": 0.8571428571428571,
+    "answer_relevancy": 0.12598815766974242,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "oos4",
+   "category": "out_of_scope",
+   "mode": "engineered",
+   "q": "What is the cafeteria menu policy?",
+   "answer": "[LIVE MCP / WEB SEARCH] Result: id,title,state\n100,PR 100: cleanup,open\n101,PR 101: retry policy,open\n102,PR 102: retry policy,open\n103,PR 103: cleanup,open\n104,PR 104: retry policy,open\n105,PR 105: metrics,open\n106,PR 106: retry policy,open\n107,PR 107",
+   "input_tokens": 532,
+   "output_tokens": 84,
+   "latency_ms": 589,
+   "tools": 4,
+   "scores": {
+    "faithfulness": 0.9444444444444444,
+    "answer_relevancy": 0.43817804600413296,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "ops1",
+   "category": "ops",
+   "mode": "engineered",
+   "q": "Check the last 200 failed orders and tell me which service threw the most errors.",
+   "answer": "[LIVE MCP / WEB SEARCH] Result: counts by service: {'order-api': 17, 'payment-worker': 26, 'inventory-sync': 7}\n\ntxn_id,order_id,service,error_code,ts\n1,274,order-api,5003,2026-11-19T09:55:00\n2,255,order-api,4001,2026-11-19T09:50:00\n3,161,payment-worke",
+   "input_tokens": 626,
+   "output_tokens": 79,
+   "latency_ms": 1437,
+   "tools": 4,
+   "scores": {
+    "faithfulness": 0.9375,
+    "answer_relevancy": 0.20272121351984582,
+    "context_precision": 1.0
+   }
+  },
+  {
+   "id": "ops2",
+   "category": "ops",
+   "mode": "engineered",
+   "q": "Who is on call for payment-worker?",
+   "answer": "",
+   "input_tokens": 252,
+   "output_tokens": 56,
+   "latency_ms": 0,
+   "tools": 4,
+   "scores": {
+    "faithfulness": 0.0,
+    "answer_relevancy": 0.0,
+    "context_precision": 0.0
+   }
+  },
+  {
+   "id": "ops3",
+   "category": "ops",
+   "mode": "engineered",
+   "q": "Show the latest commits of the order-api service.",
+   "answer": "[LIVE MCP / WEB SEARCH] Result: [{\"sha\":\"c7a2b17\",\"author\":\"ravi\",\"message\":\"bump timeout\",\"ts\":\"\",\"files\":8},{\"sha\":\"b646e2b\",\"author\":\"meera\",\"message\":\"add idempotency key\",\"ts\":\"\",\"files\":3},{\"sha\":\"da25279\",\"author\":\"ravi\",\"message\":\"refactor queu | counts by service: {'order-api': 17, 'payment-worker': 26, 'inventory-sync': 7}\n\ntxn_id,order_id,service,error_code,ts\n1,274,order-api,5003,2026-11-19T09:55:00\n2,255,order-api,4001,2026-11-19T09:50:00\n3,161,payment-worke | commit not found",
+   "input_tokens": 624,
+   "output_tokens": 195,
+   "latency_ms": 2003,
+   "tools": 4,
+   "scores": {
+    "faithfulness": 0.9423076923076923,
+    "answer_relevancy": 0.2760262237369418,
+    "context_precision": 0.3333333333333333
+   }
+  },
+  {
+   "id": "ops4",
+   "category": "ops",
+   "mode": "engineered",
+   "q": "List the active alerts.",
+   "answer": "[LIVE MCP / WEB SEARCH] Result: [{\"service\":\"payment-worker\",\"alert\":\"error 5042 spike\",\"severity\":\"Sev1\"},{\"service\":\"inventory-sync\",\"alert\":\"queue lag\",\"severity\":\"Sev2\"}]",
+   "input_tokens": 474,
+   "output_tokens": 60,
+   "latency_ms": 1430,
+   "tools": 4,
+   "scores": {
+    "faithfulness": 0.9333333333333333,
+    "answer_relevancy": 0.11785113019775795,
+    "context_precision": 1.0
+   }
+  },
+  {
+   "id": "long1",
+   "category": "long",
+   "mode": "engineered",
+   "q": "Which incident ticket number did I give you earlier?",
+   "answer": "",
+   "input_tokens": 478,
+   "output_tokens": 109,
+   "latency_ms": 0,
+   "tools": 5,
+   "scores": {
+    "faithfulness": 0.0,
+    "answer_relevancy": 0.0,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "long2",
+   "category": "long",
+   "mode": "engineered",
+   "q": "Who did I say owns the status page?",
+   "answer": "[INTERNAL RUNBOOK] (offline) Error 5042 means the payment gateway did not respond in time. First confirm the gateway status page, then check queue depth. If the gateway is healthy, replay the job with the retry script below. Never replay more than 3 times, because duplicate charges are po",
+   "input_tokens": 551,
+   "output_tokens": 67,
+   "latency_ms": 853,
+   "tools": 0,
+   "scores": {
+    "faithfulness": 0.9393939393939394,
+    "answer_relevancy": 0.15075567228888181,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "long3",
+   "category": "long",
+   "mode": "engineered",
+   "q": "What rollback target version did I mention?",
+   "answer": "",
+   "input_tokens": 418,
+   "output_tokens": 35,
+   "latency_ms": 0,
+   "tools": 5,
+   "scores": {
+    "faithfulness": 0.0,
+    "answer_relevancy": 0.0,
+    "context_precision": NaN
+   }
+  },
+  {
+   "id": "long4",
+   "category": "long",
+   "mode": "engineered",
+   "q": "Which channel is the war room?",
+   "answer": "[LIVE MCP / WEB SEARCH] Result: id,title,state\n100,PR 100: cleanup,open\n101,PR 101: retry policy,open\n102,PR 102: retry policy,open\n103,PR 103: cleanup,open\n104,PR 104: retry policy,open\n105,PR 105: metrics,open\n106,PR 106: retry policy,open\n107,PR 107",
+   "input_tokens": 876,
+   "output_tokens": 84,
+   "latency_ms": 585,
+   "tools": 5,
+   "scores": {
+    "faithfulness": 0.9444444444444444,
+    "answer_relevancy": 0.0,
+    "context_precision": NaN
+   }
+  }
+ ]
+}
